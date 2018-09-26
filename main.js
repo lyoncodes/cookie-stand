@@ -20,6 +20,9 @@
 //  7. Anything else you'd like to add related to style. But remember: simplicity, clarity, and consistency are good things in design.
 //  8. Be thoughtful about layout and overall organization of the page.
 //  9. Include all of the typical stuff that you'll find on the home page of a business: locations, hours, contact information, some text about how awesome the business is, etc. Be creative, and again, think about what is meaningful to a typical end user.
+var tomorrow = new Date(2018, 8, 27, 6)
+var tomorrowString = tomorrow.toLocaleTimeString()
+var openStore = tomorrowString.charAt(0, 9)
 
 var FirstandPike = {
   name: 'Pike Place',
@@ -31,6 +34,7 @@ var FirstandPike = {
   salesAtLocation: [],
   totalSales: 0
 }
+
 FirstandPike.customersPerHour = function () {
   var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
   console.log(randomCustomer + ' Customers this hour!')
@@ -50,6 +54,7 @@ var textH1 = function () {
   var h1El = document.getElementById('heading')
   h1El.textContent = 'The Joys of Salmon Cookies'
 }
+textH1()
 
 var FirstandPikeData = function () {
   var storeContainer = document.getElementById('SeattleStores')
@@ -60,14 +65,14 @@ var FirstandPikeData = function () {
   storeContainer.appendChild(ulEl)
   for (let i = 0; i < FirstandPike.hours; i++) {
     var liEl = document.createElement('li')
-    liEl.textContent = FirstandPike.hourSign[i] + ' : ' + FirstandPike.salesPerHour()
+    liEl.textContent = openStore++ + 'M : ' + FirstandPike.salesPerHour()
     ulEl.appendChild(liEl)
   }
   var liEl2 = document.createElement('li')
   liEl2.textContent = 'Total : ' + FirstandPike.totalSales
   ulEl.appendChild(liEl2)
 }
-textH1()
+
 FirstandPikeData()
 
 var SeaTac = {
