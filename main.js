@@ -27,6 +27,7 @@ var FirstandPike = {
   max: 65,
   averageSalesPerCustomer: 6.3,
   hours: 14,
+  hourSign: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   salesAtLocation: [],
   totalSales: 0
 }
@@ -59,171 +60,172 @@ var FirstandPikeData = function () {
   storeContainer.appendChild(ulEl)
   for (let i = 0; i < FirstandPike.hours; i++) {
     var liEl = document.createElement('li')
-    liEl.textContent = FirstandPike.salesPerHour()
+    liEl.textContent = FirstandPike.hourSign[i] + ' : ' + FirstandPike.salesPerHour()
     ulEl.appendChild(liEl)
   }
 }
 textH1()
 FirstandPikeData()
 
-var SeaTac = {
-  name: 'Airport',
-  min: 3,
-  max: 24,
-  averageSalesPerCustomer: 1.2,
-  hours: 14,
-  salesAtLocation: [],
-  totalSales: 0
-}
-SeaTac.customersPerHour = function () {
-  var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
-  console.log(randomCustomer + ' Customers this hour!')
-  return randomCustomer
-}
+// var SeaTac = {
+//   name: 'Airport',
+//   min: 3,
+//   max: 24,
+//   averageSalesPerCustomer: 1.2,
+//   hours: 14,
+//   salesAtLocation: [],
+//   totalSales: 0
+// }
+// SeaTac.customersPerHour = function () {
+//   var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
+//   console.log(randomCustomer + ' Customers this hour!')
+//   return randomCustomer
+// }
 
-SeaTac.salesPerHour = function () {
-  for (let i = 0; i < this.hours; i++) {
-    var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
-    this.salesAtLocation[i] = hourSales
-    this.totalSales += hourSales
-    console.log(hourSales)
-    return hourSales
-  }
-}
-var SeaTacData = function () {
-  var storeContainer = document.getElementById('SeattleStores')
-  var h2El = document.createElement('h2')
-  h2El.textContent = SeaTac.name
-  storeContainer.appendChild(h2El)
-  var ulEl = document.createElement('ul')
-  storeContainer.appendChild(ulEl)
-  for (let i = 0; i < SeaTac.hours; i++) {
-    var liEl = document.createElement('li')
-    liEl.textContent = SeaTac.salesPerHour()
-    ulEl.appendChild(liEl)
-  }
-}
+// SeaTac.salesPerHour = function () {
+//   for (let i = 0; i < this.hours; i++) {
+//     var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
+//     this.salesAtLocation[i] = hourSales
+//     this.totalSales += hourSales
+//     console.log(hourSales)
+//     return hourSales
+//   }
+// }
+// var SeaTacData = function () {
+//   var storeContainer = document.getElementById('SeattleStores')
+//   var h2El = document.createElement('h2')
+//   h2El.textContent = SeaTac.name
+//   storeContainer.appendChild(h2El)
+//   var ulEl = document.createElement('ul')
+//   storeContainer.appendChild(ulEl)
+//   for (let i = 0; i < SeaTac.hours; i++) {
+//     var liEl = document.createElement('li')
+//     liEl.textContent = SeaTac.salesPerHour()
+//     ulEl.appendChild(liEl)
+//   }
+// }
 
-SeaTacData()
+// SeaTacData()
 
-var SeattleCenter = {
-  name: 'Seattle Center',
-  min: 11,
-  max: 38,
-  averageSalesPerCustomer: 3.7,
-  hours: 14,
-  salesAtLocation: [],
-  totalSales: 0
-}
-SeattleCenter.customersPerHour = function () {
-  var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
-  console.log(randomCustomer + ' Customers this hour!')
-  return randomCustomer
-}
+// var SeattleCenter = {
+//   name: 'Seattle Center',
+//   min: 11,
+//   max: 38,
+//   averageSalesPerCustomer: 3.7,
+//   hours: 14,
+//   salesAtLocation: [],
+//   totalSales: 0
+// }
+// SeattleCenter.customersPerHour = function () {
+//   var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
+//   console.log(randomCustomer + ' Customers this hour!')
+//   return randomCustomer
+// }
 
-SeattleCenter.salesPerHour = function () {
-  for (let i = 0; i < this.hours; i++) {
-    var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
-    this.salesAtLocation[i] = hourSales
-    this.totalSales += hourSales
-    console.log(hourSales)
-    return hourSales
-  }
-}
-var SeattleCenterData = function () {
-  var storeContainer = document.getElementById('SeattleStores')
-  var h2El = document.createElement('h2')
-  h2El.textContent = SeattleCenter.name
-  storeContainer.appendChild(h2El)
-  var ulEl = document.createElement('ul')
-  storeContainer.appendChild(ulEl)
-  for (let i = 0; i < SeattleCenter.hours; i++) {
-    var liEl = document.createElement('li')
-    liEl.textContent = SeattleCenter.salesPerHour()
-    ulEl.appendChild(liEl)
-  }
-}
-SeattleCenterData()
+// SeattleCenter.salesPerHour = function () {
+//   for (let i = 0; i < this.hours; i++) {
+//     var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
+//     this.salesAtLocation[i] = hourSales
+//     this.totalSales += hourSales
+//     console.log(hourSales)
+//     return hourSales
+//   }
+// }
+// var SeattleCenterData = function () {
+//   var storeContainer = document.getElementById('SeattleStores')
+//   var h2El = document.createElement('h2')
+//   h2El.textContent = SeattleCenter.name
+//   storeContainer.appendChild(h2El)
+//   var ulEl = document.createElement('ul')
+//   storeContainer.appendChild(ulEl)
+//   for (let i = 0; i < SeattleCenter.hours; i++) {
+//     var liEl = document.createElement('li')
+//     liEl.textContent = SeattleCenter.salesPerHour()
+//     ulEl.appendChild(liEl)
+//   }
+// }
+// SeattleCenterData()
 
-var CapitolHill = {
-  name: 'Odd Fellows',
-  min: 20,
-  max: 38,
-  averageSalesPerCustomer: 2.3,
-  hours: 14,
-  salesAtLocation: [],
-  totalSales: 0
-}
-CapitolHill.customersPerHour = function () {
-  var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
-  console.log(randomCustomer + ' Customers this hour!')
-  return randomCustomer
-}
+// var CapitolHill = {
+//   name: 'Odd Fellows',
+//   min: 20,
+//   max: 38,
+//   averageSalesPerCustomer: 2.3,
+//   hours: 14,
+//   salesAtLocation: [],
+//   totalSales: 0
+// }
+// CapitolHill.customersPerHour = function () {
+//   var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
+//   console.log(randomCustomer + ' Customers this hour!')
+//   return randomCustomer
+// }
 
-CapitolHill.salesPerHour = function () {
-  for (let i = 0; i < this.hours; i++) {
-    var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
-    this.salesAtLocation[i] = hourSales
-    this.totalSales += hourSales
-    console.log(hourSales)
-    return hourSales
-  }
-}
-var CapitolHillData = function () {
-  var storeContainer = document.getElementById('SeattleStores')
-  var h2El = document.createElement('h2')
-  h2El.textContent = CapitolHill.name
-  storeContainer.appendChild(h2El)
-  var ulEl = document.createElement('ul')
-  storeContainer.appendChild(ulEl)
-  for (let i = 0; i < CapitolHill.hours; i++) {
-    var liEl = document.createElement('li')
-    liEl.textContent = CapitolHill.salesPerHour()
-    ulEl.appendChild(liEl)
-  }
-}
-CapitolHillData()
+// CapitolHill.salesPerHour = function () {
+//   for (let i = 0; i < this.hours; i++) {
+//     var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
+//     this.salesAtLocation[i] = hourSales
+//     this.totalSales += hourSales
+//     console.log(hourSales)
+//     return hourSales
+//   }
+// }
+// var CapitolHillData = function () {
+//   var storeContainer = document.getElementById('SeattleStores')
+//   var h2El = document.createElement('h2')
+//   h2El.textContent = CapitolHill.name
+//   storeContainer.appendChild(h2El)
+//   var ulEl = document.createElement('ul')
+//   storeContainer.appendChild(ulEl)
+//   for (let i = 0; i < CapitolHill.hours; i++) {
+//     var liEl = document.createElement('li')
+//     liEl.textContent = CapitolHill.salesPerHour()
+//     ulEl.appendChild(liEl)
+//   }
+// }
+// CapitolHillData()
 
-var Alki = {
-  name: 'Alki Beach',
-  min: 2,
-  max: 16,
-  averageSalesPerCustomer: 4.6,
-  hours: 14,
-  salesAtLocation: [],
-  totalSales: 0
-}
-Alki.customersPerHour = function () {
-  var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
-  console.log(randomCustomer + ' Customers this hour!')
-  return randomCustomer
-}
+// var Alki = {
+//   name: 'Alki Beach',
+//   min: 2,
+//   max: 16,
+//   averageSalesPerCustomer: 4.6,
+//   hours: 14,
+//   salesAtLocation: [],
+//   totalSales: 0
+// }
+// Alki.customersPerHour = function () {
+//   var randomCustomer = Math.floor(Math.random() * (this.max - this.min) + this.min)
+//   console.log(randomCustomer + ' Customers this hour!')
+//   return randomCustomer
+// }
 
-Alki.salesPerHour = function () {
-  for (let i = 0; i < this.hours; i++) {
-    var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
-    this.salesAtLocation[i] = hourSales
-    this.totalSales += hourSales
-    console.log(hourSales)
-    return hourSales
-  }
-}
-var CapitolHillData = function () {
-  var storeContainer = document.getElementById('SeattleStores')
-  var h2El = document.createElement('h2')
-  h2El.textContent = Alki.name
-  storeContainer.appendChild(h2El)
-  var ulEl = document.createElement('ul')
-  storeContainer.appendChild(ulEl)
-  for (let i = 0; i < Alki.hours; i++) {
-    var liEl = document.createElement('li')
-    liEl.textContent = Alki.salesPerHour()
-    ulEl.appendChild(liEl)
-  }
-}
-CapitolHillData()
+// Alki.salesPerHour = function () {
+//   for (let i = 0; i < this.hours; i++) {
+//     var hourSales = Math.round(this.averageSalesPerCustomer * this.customersPerHour())
+//     this.salesAtLocation[i] = hourSales
+//     this.totalSales += hourSales
+//     console.log(hourSales)
+//     return hourSales
+//   }
+// }
+// var AlkiData = function () {
+//   var storeContainer = document.getElementById('SeattleStores')
+//   var h2El = document.createElement('h2')
+//   h2El.textContent = Alki.name
+//   storeContainer.appendChild(h2El)
+//   var ulEl = document.createElement('ul')
+//   storeContainer.appendChild(ulEl)
+//   for (let i = 0; i < Alki.hours; i++) {
+//     var liEl = document.createElement('li')
+//     liEl.textContent = Alki.salesPerHour()
+//     storeContainer.appendChild(liEl)
+//   }
+// }
+// AlkiData()
+
 //
-// FUNCTION GRAVE YARD
+// FUNCTION GRAVE YARD & NECROPOLIS
 //
 // randCustomer: function () {
 //   var customersPerHour = (Math.floor(Math.random(this.min, this.max) * 100) + 1)
