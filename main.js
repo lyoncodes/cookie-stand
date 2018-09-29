@@ -1,13 +1,5 @@
 'use strict'
-// Add the necessary HTML to create the input form.
-// Don't forget <fieldset>!
-
-// Use the constructor function as your guide to determine what input fields your form needs (hint: also consider what is passed in when creating instances!)
-
 // Your JS will need an event listener and and event handler, and you may also want a variable to facilitate DOM access to the form.
-
-// As we saw in class, the event handler should use the take the data from the input field, pass it into the constructor function, 
-// and create a new instance of a cookie stand that then appends to the table.
 
 // Are you going to do any error correction on input? You probably should. Look at what kind of input validation is built in to HTML5.
 
@@ -25,6 +17,7 @@
 
 // When making code more DRY, look for repeated behaviors that act on different pieces of data. Put the behavior into a function that is declared with parameters to receive the unique data, and then replace the repeated code with the function called with the unique data in arguments.
 
+// STORE COLLECTION
 var storeCollection = []
 // EVENT HANDLER STORE MAKER
 var makeStoreHandler = function (e) {
@@ -42,25 +35,6 @@ var makeStoreHandler = function (e) {
   newLocation.salesEachHour()
   storeCollection.push(newLocation)
   newLocation.renderTableAsRow()
-  // RENDER THIS
-//   var tableEl = document.getElementById('store-table')
-//   var trEl = document.createElement('tr')
-//   var thEl = document.createElement('th')
-//   thEl.textContent = name
-//   trEl.appendChild(thEl)
-//   for (let i = 0; i < hours.length; i++) {
-//     var tdEl = document.createElement('td')
-//     tdEl.textContent = hours[i]
-//     trEl.appendChild(tdEl)
-//   }
-//   tableEl.appendChild(trEl)
-//   trEl = document.createElement('tr')
-//   for (let i = 0; i < hours.length; i++) {
-//     tdEl = document.createElement('td')
-//     tdEl.textContent = unitsSoldEachHour[i]
-//     trEl.appendChild(tdEl)
-//   }
-//   tableEl.appendChild(trEl)
 }
 var Store = function (name, minCustomersPerHour, maxCustomersPerHour, averageUnitsPerSale) {
   this.name = name
@@ -153,20 +127,10 @@ console.log(FirstandPike, SeaTac, SeattleCenter, CapitolHill, Alki)
 var storeForm = document.getElementById('store-generator')
 storeForm.addEventListener('submit', makeStoreHandler)
 
-// RENDER STORE AS LIST
-// var renderStore = function () {
-//   FirstandPike.renderStoreData()
-//   SeaTac.renderStoreData()
-//   SeattleCenter.renderStoreData()
-//   CapitolHill.renderStoreData()
-//   Alki.renderStoreData()
-// }
-
 // CALL FUNCTIONS
 textH1() // Heading
 
 // RENDER STORE AS TABLE
-
 var renderAsTable = function () {
   for (let i = 0; i < storeCollection.length; i++) {
     storeCollection[i].renderTableAsRow()
@@ -175,7 +139,7 @@ var renderAsTable = function () {
 renderAsTable()
 
 // FUNCTION GRAVE YARD & NECROPOLIS
-//
+
 // randCustomer: function () {
 //   var customersPerHour = (Math.floor(Math.random(this.min, this.max) * 100) + 1)
 //   return customersPerHour
@@ -193,7 +157,6 @@ renderAsTable()
 //   var headerEl = document.createElement('h2');
 //   headerEl.textContent = this.name;
 //   for (var i in this.hourSales){
-
 //   }
 // }
 // FirstandPike.prototype.randCustomer = function () {
@@ -208,12 +171,12 @@ renderAsTable()
 //   }
 //   return this.salesAtLocation
 // }
-//
-//
+
 // LIVE CLOCK IDEAS
 // var tomorrow = new Date(2018, 8, 27, 6)
 // var tomorrowString = tomorrow.toLocaleTimeString()
 // var openStore = tomorrowString.slice(0, 1)
+
 // RENDER STORE
 // var renderStore = function () {
 //   FirstandPike.renderStoreData()
@@ -240,3 +203,49 @@ renderAsTable()
 //   trEl.appendChild(tdEl)
 // }
 // tableEl.appendChild(trEl)
+//   var tableEl = document.getElementById('store-table')
+//   var trEl = document.createElement('tr')
+//   var thEl = document.createElement('th')
+//   thEl.textContent = name
+//   trEl.appendChild(thEl)
+//   for (let i = 0; i < hours.length; i++) {
+//     var tdEl = document.createElement('td')
+//     tdEl.textContent = hours[i]
+//     trEl.appendChild(tdEl)
+//   }
+//   tableEl.appendChild(trEl)
+//   trEl = document.createElement('tr')
+//   for (let i = 0; i < hours.length; i++) {
+//     tdEl = document.createElement('td')
+//     tdEl.textContent = unitsSoldEachHour[i]
+//     trEl.appendChild(tdEl)
+//   }
+//   tableEl.appendChild(trEl)
+// RENDER THIS
+//   var tableEl = document.getElementById('store-table')
+//   var trEl = document.createElement('tr')
+//   var thEl = document.createElement('th')
+//   thEl.textContent = name
+//   trEl.appendChild(thEl)
+//   for (let i = 0; i < hours.length; i++) {
+//     var tdEl = document.createElement('td')
+//     tdEl.textContent = hours[i]
+//     trEl.appendChild(tdEl)
+//   }
+//   tableEl.appendChild(trEl)
+//   trEl = document.createElement('tr')
+//   for (let i = 0; i < hours.length; i++) {
+//     tdEl = document.createElement('td')
+//     tdEl.textContent = unitsSoldEachHour[i]
+//     trEl.appendChild(tdEl)
+//   }
+//   tableEl.appendChild(trEl)
+
+// RENDER STORE AS LIST****UNCOMMENT TO ACTIVATE
+// var renderStore = function () {
+//   FirstandPike.renderStoreData()
+//   SeaTac.renderStoreData()
+//   SeattleCenter.renderStoreData()
+//   CapitolHill.renderStoreData()
+//   Alki.renderStoreData()
+// }
