@@ -1,8 +1,6 @@
 'use strict'
 // Your JS will need an event listener and and event handler, and you may also want a variable to facilitate DOM access to the form.
 
-// Are you going to do any error correction on input? You probably should. Look at what kind of input validation is built in to HTML5.
-
 // Write a stand-alone function to generate a footer row which will display the total number of cookies sold per hour for all locations. 
 // When a new store is added using your form, the totals in the footer row should update to include these new sales numbers.
 
@@ -19,6 +17,8 @@
 
 // STORE COLLECTION
 var storeCollection = []
+var totalSales = []
+var storeHours = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ', '8pm ']
 // EVENT HANDLER STORE MAKER
 var makeStoreHandler = function (e) {
   e.preventDefault()
@@ -36,6 +36,7 @@ var makeStoreHandler = function (e) {
   storeCollection.push(newLocation)
   newLocation.renderTableAsRow()
 }
+
 var Store = function (name, minCustomersPerHour, maxCustomersPerHour, averageUnitsPerSale) {
   this.name = name
   this.min = minCustomersPerHour
@@ -44,6 +45,7 @@ var Store = function (name, minCustomersPerHour, maxCustomersPerHour, averageUni
   this.hours = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ', '8pm ']
   this.unitsSoldEachHour = []
 }
+
 // OBJECT PROTOTYPES
 Store.prototype.salesPerHour = function () {
   var customersPerHour = Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
@@ -73,10 +75,6 @@ Store.prototype.renderStoreData = function () {
     liEl.textContent = this.unitsSoldEachHour[i]
     ulEl.appendChild(liEl)
   }
-  var liEl2 = document.createElement('li')
-  liEl2.textContent = 'Total : ' + this.total
-  ulEl.appendChild(liEl2)
-
   storeContainer.appendChild(ulEl)
 }
 Store.prototype.renderTableAsRow = function () {
@@ -100,6 +98,7 @@ Store.prototype.renderTableAsRow = function () {
   }
   tableEl.appendChild(trEl)
 }
+
 // HEADING & STORE INFORMATION
 var textH1 = function () {
   var h1El = document.getElementById('heading')
@@ -122,6 +121,7 @@ storeCollection.push(Alki)
 
 // CHECK THEIR VALIDITY
 console.log(FirstandPike, SeaTac, SeattleCenter, CapitolHill, Alki)
+console.log(storeCollection)
 
 // REFERENCE FORM & ADD LISTENER
 var storeForm = document.getElementById('store-generator')
@@ -138,8 +138,37 @@ var renderAsTable = function () {
 }
 renderAsTable()
 
-// FUNCTION GRAVE YARD & NECROPOLIS
+// CALCULATE TOTAL AND RENDER AS TABLE FOOTER
+var calculateTotalFooter = function () {
+  for (let i = 0; i < storeHours.length; i++) {
+    var total = 0
+    for (let j = 0; j < storeCollection.length; j++) {
+      total += storeCollection[j].unitsSoldEachHour[j]
+      totalSales.push(total)
+    }
+  }
+}
+calculateTotalFooter()
 
+var renderFooter = function () {
+  var tableEl = document.getElementById('store-table')
+  var tfEl = document.createElement('tfoot')
+  for (let i = 0; i < totalSales.length; i++) {
+    tfEl.textContent = totalSales[i]
+    tableEl.appendChild(tfEl)
+  }
+}
+renderFooter()
+// var renderFooter = function () {
+//   var tableEl = document.getElementById('store-table')
+//   var tfootEl = document.createElement('tfoot')
+//   for (let i = 0; i < totalSales.length; i++) {
+//     totalSales[i]
+//   }
+//   tableEl.appendChild(tfootEl)
+// }
+// renderFooter()
+// FUNCTION GRAVE YARD & NECROPOLIS
 // randCustomer: function () {
 //   var customersPerHour = (Math.floor(Math.random(this.min, this.max) * 100) + 1)
 //   return customersPerHour
