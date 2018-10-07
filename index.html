@@ -8,37 +8,61 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />        
 </head>
 <body>
-<div id = "Page"> 
+<div id = "Homepage">
 
-  <h1 id='heading'></h1>
-  <form id = "store-generator">
-      <fieldset>
-        <legend> Store Generator </legend>
-
-        <label for="store-name">Location</label>
-        <input name = "name" type = "text" id = "name"/>
-        
-        <label for="min-customers">min. customers/hour</label>
-        <input name = "min-customers-per-hour" type = "number" id = "min" required min="1" max="299"/>
-
-        <label for="max-customers">max. customers/hour</label>
-        <input name = "max-customers-per-hour" type = "number" id = "max" required min="0" max="299"/>
-
-        <label for="ave-units-per-sale">ave. units per sale</label>
-        <input name = "ave-units-per-sale" type = "number" id = "ave" required min="1" max="999" />
-
-        <button type = "submit">Create Location & Start Tracking Sales</button>
-
-      </fieldset>
-  <div id = "SeattleStores">
-
+  <div class = "headline">
+  <h1 id='heading'>PAT'S FAMOUS SALMON COOKIES</h1>
+  <h3 id ='subtitle'>Savory Confections From the NW</h3>
+  <nav>
+    <ul>
+      <li><a href="sales.html">Sales Data</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href = "aboutus.html">About Pat</a></li>
+    </ul>
+  </nav>
   </div>
 
-  <table id = "store-table"></table>
-  
-  <form id = "store-generator">
+  <div class = "darkMatter">
+  </div>
 
+  <h3>Locations</h3>
+  <p>All spots are open 6:00 am - 8:00 pm, M-F</p>
+  <div class = "addresses">
+      <nav>
+          <p>Pike Place Market</p>
+          <p class = "smallText">1st & Pike, #410</p>
+        
+          <p>Capitol Hill</p>
+          <p class = "smallText">Oddfellows Building</p>
+        
+          <p>Seattle Center</p>
+          <p class = "smallText">The Armory</p>
+                        
+          <p>Alki Beach</p>
+          <p class = "smallText">Alki Ave. SW #1020</p>
+        
+          <p>SeaTac International Airport</p>
+          <p class = "smallText">International Terminal</p>
+                   
+      </nav>
 </div> 
+
+<div class = "darkMatter">
+</div>
+
+<div class = "headline">
+    <h3 id ='subtitle'>Contact Us (You Won't Regret It)</h3>
+    <nav>
+      <p> Stop by 1st & Pike to Chat</p>
+    </nav>
+</div>
+
+<img src="chinook.jpg">
+<img src="cutter.jpeg">
+<img src="family.jpg">
+<img src="fish.jpg">
+<img src="frosted-cookie.jpg">
+
 
 <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Taviraj|Work+Sans" rel="stylesheet">

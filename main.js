@@ -7,18 +7,20 @@
 // Build incrementally. Test frequently.
 // Be attentive to overall code structure.
 
-// This is a good point to refactor your code into smaller functions/methods if you have some huge functions going on. 
+// This is a good point to refactor your code into smaller functions/methods if you have some huge functions going on.
 // Remember that each function should do one thing, and then you can compose more complex behavior out of functions.
 
-// Anywhere you have repeated chunks of code, maybe you can start to apply some DRY principles. 
+// Anywhere you have repeated chunks of code, maybe you can start to apply some DRY principles.
+
 // Generally, once some chunk of code is appearing for a 3rd time or so, that's when you want to consider refactoring.
 
 // When making code more DRY, look for repeated behaviors that act on different pieces of data. Put the behavior into a function that is declared with parameters to receive the unique data, and then replace the repeated code with the function called with the unique data in arguments.
 
-// STORE COLLECTION
+// STORE COLLECTION & GLOBAL VARIABLES
 var storeCollection = []
 var totalSales = []
 var storeHours = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ', '8pm ']
+
 // EVENT HANDLER STORE MAKER
 var makeStoreHandler = function (e) {
   e.preventDefault()
@@ -27,9 +29,7 @@ var makeStoreHandler = function (e) {
   var min = e.target['min-customers-per-hour'].value
   var max = e.target['max-customers-per-hour'].value
   var aveUnitsPerSale = e.target['ave-units-per-sale'].value
-  var hours = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ', '8pm ']
-  var unitsSoldEachHour = []
-  // INSTANTIATION SOUP
+  // INSTANTIATION
   var newLocation = new Store(name, min, max, aveUnitsPerSale)
   newLocation.salesPerHour()
   newLocation.salesEachHour()
