@@ -1,12 +1,47 @@
+
 #Page {
     background-color: rgb(252, 244, 233);
     font-family: 'Work Sans' , sans-serif;
 }
-h1, h2, p {
+
+h1, h2, h3, p {
     font-family: 'Taviraj' , serif;
+    text-align: center;
+}
+.darkMatter {
+    height: 100px;
+}
+.headline ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.headline li {
+    display: inline-block;
+    padding: 10px;
+}
+.headline p {
+    text-align: center;
+    margin: 0;
+}
+.smallText {
+    font-size: 12px;
+    margin: 0;
+}
+.addresses {
+    columns: 2;
+    margin: 0px 200px 0px 200px;
+}
+.addresses p {
+    margin: 0px;
 }
 #heading {
     text-align: center;
+    margin: 10px 0;
+}
+#subtitle {
+    text-align: center;
+    margin: 0px 10px;
 }
 #SeattleStores {
     display: inline-block;
