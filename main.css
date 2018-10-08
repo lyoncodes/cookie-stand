@@ -9,7 +9,7 @@ h1, h2, h3, p {
     text-align: center;
 }
 .darkMatter {
-    height: 100px;
+    height: 50px;
 }
 .headline ul {
     text-align: center;
@@ -35,6 +35,14 @@ h1, h2, h3, p {
 .addresses p {
     margin: 0px;
 }
+.location {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+.location p {
+    margin: 2px;
+}
 #heading {
     text-align: center;
     margin: 10px 0;
@@ -45,4 +53,13 @@ h1, h2, h3, p {
 }
 #SeattleStores {
     display: inline-block;
+}
+#main {
+   display: block;
+   margin: 20px;
+   margin-left: auto;
+   margin-right: auto;
+}
+#one {
+    margin: 20px auto;
 }
